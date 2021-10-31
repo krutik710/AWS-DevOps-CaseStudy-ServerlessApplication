@@ -34,7 +34,10 @@ def lambda_handler(event, context):
 		for row in reader:
 			save_to_dynamodb(db_table, row)
 
+	# dummy print to check CICD
+	print("CICD is working!")
+
 	return {
 		'statusCode': 200,
-		'body': json.dumps('CSV data successfully added to DynamoDB!!!')
+		'body': json.dumps('CSV data successfully added to DynamoDB!')
 	}
